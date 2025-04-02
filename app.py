@@ -1,10 +1,10 @@
-from flask import Flask, request, send_from_directory
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return send_from_directory('.', 'index.html')
+    return render_template('index.html')
 
 @app.route('/submit', methods=['POST'])
 def submit():
